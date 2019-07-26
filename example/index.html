@@ -8,8 +8,9 @@
   </head>
   <body>
     <canvas id="canvas" width="800" height="800"></canvas>
-    <script src="https://unpkg.com/hilbert-curve"></script>
+    <script src="../index.js"></script>
     <script>
+      // http://www.fabiocrameri.ch/colourmaps.php
       const roma = [
         "#7e1900",
         "#801c01",
@@ -269,11 +270,12 @@
         "#1a3399"
       ];
 
-      const n = 16; // conceptual n*n square
-      const dimCellPx = 50; // represent each square as dimCellPx*dimCellPx pixels
       const canvas = document.querySelector("#canvas");
       const context = canvas.getContext("2d");
+      const n = Math.sqrt(roma.length);
+      const dimCellPx = canvas.width / n;
       const prev = { x: undefined, y: undefined };
+
       for (index = 0; index < 256; index += 1) {
         const color = roma[index];
         const point = hilbertCurve.indexToPoint(index, n);
