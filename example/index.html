@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Hilbert curve mapping</title>
+    <title>Hilbert curve color ramp</title>
   </head>
   <body>
     <canvas id="canvas" width="800" height="800"></canvas>
     <script src="../index.js"></script>
     <script>
-      // http://www.fabiocrameri.ch/colourmaps.php
-      const roma = [
+      // http://www.fabiocrameri.ch/colourmaps.php; roma ramp
+      const ramp = [
         "#7e1900",
         "#801c01",
         "#811f02",
@@ -272,12 +272,12 @@
 
       const canvas = document.querySelector("#canvas");
       const context = canvas.getContext("2d");
-      const n = Math.sqrt(roma.length);
+      const n = Math.sqrt(ramp.length);
       const dimCellPx = canvas.width / n;
       const prev = { x: undefined, y: undefined };
 
-      for (index = 0; index < 256; index += 1) {
-        const color = roma[index];
+      for (index = 0; index < ramp.length; index += 1) {
+        const color = ramp[index];
         const point = hilbertCurve.indexToPoint(index, n);
         context.fillStyle = color;
         context.fillRect(
