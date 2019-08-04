@@ -25,9 +25,9 @@
     let rx,
       ry,
       index = 0;
-    for (let s = n / 2; s > 0; s /= 2) {
-      rx = (point.x & s) > 0;
-      ry = (point.y & s) > 0;
+    for (let s = n / 2; s > 0; s = Math.floor(s / 2)) {
+      rx = (point.x & s) > 0 ? 1 : 0;
+      ry = (point.y & s) > 0 ? 1 : 0;
       index += s * s * ((3 * rx) ^ ry);
       rotate(point, rx, ry, n);
     }
