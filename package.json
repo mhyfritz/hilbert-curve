@@ -1,6 +1,6 @@
 {
   "name": "hilbert-curve",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hilbert curve mapping",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,10 @@
   "author": {
     "name": "Markus Hsi-Yang Fritz",
     "email": "markus.h.y.fritz@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhyfritz/hilbert-curve.git"
   },
   "license": "MIT",
   "devDependencies": {
