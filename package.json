@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "Hilbert curve mapping",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "keywords": [],
   "author": {
     "name": "Markus Hsi-Yang Fritz",
     "email": "markus.h.y.fritz@gmail.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }
