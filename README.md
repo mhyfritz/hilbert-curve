@@ -22,19 +22,19 @@ For direct use in the browser, you can simply pull in `index.js` with a `<script
 
 ![](./hilbert-curve-numbering.png)
 
-Given an index `i`, return the point on the Hilbert Curve of order `n`
-(`n` by `n` square, with `n` being a power of 2):
+### `hilbertCurve.indexToPoint(i, n)`
 
-`hilbertCurve.indexToPoint(i, n)`, e.g.
+Given an index `i`, return the point on the Hilbert curve of order `n`
+(`n` by `n` square, with `n` being a power of 2), e.g.
 
 ```javascript
 hilbertCurve.indexToPoint(17, 8);
 // { x: 1, y: 4 }
 ```
 
-Inverse: given a point `{x,y}` on the Hilbert Curve of order `n`, return the index:
+### `hilbertCurve.pointToIndex({x, y}, n)`
 
-`hilbertCurve.pointToIndex({x, y}, n)`
+Inverse: given a point `{x,y}` on the Hilbert curve of order `n`, return the index, e.g.
 
 ```javascript
 hilbertCurve.pointToIndex({ x: 5, y: 2 }, 8);
