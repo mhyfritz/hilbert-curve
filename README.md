@@ -9,15 +9,19 @@ npm install hilbert-curve
 ## Usage
 
 ```javascript
+import * as hilbertCurve from "hilbert-curve";
+
+// or
+
 const hilbertCurve = require("hilbert-curve");
 ```
 
-For direct use in the browser, you can simply pull in `index.js` with a `<script>` tag
-
 ```html
-<script src="node_modules/hilbert-curve/index.js"></script>
-<!-- or via unpkg -->
+<!-- unpkg -->
 <script src="unpkg.com/hilbert-curve"></script>
+
+<!-- jsdelivr -->
+<script src="https://cdn.jsdelivr.net/npm/hilbert-curve"></script>
 ```
 
 ![](./hilbert-curve-numbering.png)
