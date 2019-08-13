@@ -2,21 +2,40 @@
   "name": "hilbert-curve",
   "version": "1.0.1",
   "description": "Hilbert curve mapping",
-  "main": "index.js",
+  "main": "dist/hilbert-curve.js",
+  "module": "src/index.js",
+  "unpkg": "dist/hilbert-curve.min.js",
+  "jsdelivr": "dist/hilbert-curve.min.js",
   "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "release": "npx np",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "fractal",
+    "hilbert curve",
+    "space-filling curve",
+    "visualization"
+  ],
   "author": {
     "name": "Markus Hsi-Yang Fritz",
     "email": "markus.h.y.fritz@gmail.com"
   },
+  "homepage": "https://github.com/mhyfritz/hilbert-curve",
   "repository": {
     "type": "git",
     "url": "https://github.com/mhyfritz/hilbert-curve.git"
   },
   "license": "MIT",
   "devDependencies": {
-    "jest": "^24.8.0"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "camelcase": "^5.3.1",
+    "jest": "^24.8.0",
+    "rollup": "^1.19.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
   }
 }

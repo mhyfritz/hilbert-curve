@@ -1,4 +1,4 @@
-const hilberCurve = require("./");
+const hilberCurve = require("../");
 
 test("[truth] n=4, index=0", () => {
   expect(hilberCurve.indexToPoint(0, 4)).toEqual({ x: 0, y: 0 });
