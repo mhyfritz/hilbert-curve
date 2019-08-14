@@ -8,13 +8,17 @@ npm install hilbert-curve
 
 ## Usage
 
+Node:
+
 ```javascript
-import * as hilbertCurve from "hilbert-curve";
+const hilbertCurve = require("hilbert-curve");
 
 // or
 
-const hilbertCurve = require("hilbert-curve");
+import * as hilbertCurve from "hilbert-curve";
 ```
+
+Browser:
 
 ```html
 <!-- unpkg -->
