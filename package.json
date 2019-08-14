@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "pretest": "npm run build",
     "release": "npx np",
-    "test": "jest"
+    "test": "jest",
+    "version": "npm run build"
   },
   "keywords": [
     "fractal",
