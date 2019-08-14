@@ -48,3 +48,5 @@ Inverse: given a point `{x,y}` on the Hilbert curve of order `n`, return the ind
 hilbertCurve.pointToIndex({ x: 5, y: 2 }, 8);
 // 55
 ```
+
+[Try `hilbert-curve` in your browser.](https://npm.runkit.com/hilbert-curve)
