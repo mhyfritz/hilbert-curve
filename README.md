@@ -22,7 +22,7 @@ Browser:
 
 ```html
 <!-- unpkg -->
-<script src="unpkg.com/hilbert-curve"></script>
+<script src="https://unpkg.com/hilbert-curve"></script>
 
 <!-- jsdelivr -->
 <script src="https://cdn.jsdelivr.net/npm/hilbert-curve"></script>
