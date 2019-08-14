@@ -1,18 +1,17 @@
 import { terser } from "rollup-plugin-terser";
 import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
-import * as meta from "./package.json";
+import * as pkg from "./package.json";
 import camelCase from "camelcase";
 
 const config = {
   input: "src/index.js",
   output: {
-    file: `dist/${meta.name}.js`,
-    name: camelCase(meta.name),
+    name: camelCase(pkg.name),
     format: "umd",
-    banner: `// ${meta.homepage} v${
-      meta.version
-    } Copyright ${new Date().getFullYear()} ${meta.author.name}`
+    banner: `// ${pkg.homepage} v${
+      pkg.version
+    } Copyright ${new Date().getFullYear()} ${pkg.author.name}`
   },
   plugins: [
     resolve(),
@@ -23,12 +22,25 @@ const config = {
 };
 
 export default [
-  config,
+  {
+    ...config,
+    output: [
+      {
+        ...config.output,
+        file: `dist/${pkg.name}.umd.js`
+      },
+      {
+        ...config.output,
+        file: `dist/${pkg.name}.esm.js`,
+        format: "esm"
+      }
+    ]
+  },
   {
     ...config,
     output: {
       ...config.output,
-      file: `dist/${meta.name}.min.js`
+      file: `dist/${pkg.name}.umd.min.js`
     },
     plugins: [
       ...config.plugins,
