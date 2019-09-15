@@ -1,6 +1,39 @@
 // https://en.wikipedia.org/wiki/Hilbert_curve#Applications_and_mapping_algorithms
 
-export function indexToPoint(index, n) {
+import { bin, pick } from "@mhyfritz/bin-data";
+
+export function construct(data, order, pickRepresentative = pick.max) {
+  if (!Array.isArray(data)) {
+    data = Array.from(data);
+  }
+  // order for full, uncompressed curve
+  const orderFull = Math.ceil(Math.log2(Math.sqrt(data.length)));
+  if (order === undefined || order >= orderFull) {
+    return _construct(data, orderFull);
+  } else {
+    const n = 2 ** order;
+    const binned = bin(data, n * n, pickRepresentative);
+    return _construct(binned, order);
+  }
+}
+
+function _construct(data, order) {
+  const n = 2 ** order;
+  const curve = new Array(n * n);
+  // TODO assert data.length <= curve.length
+  for (let index = 0; index < data.length; index += 1) {
+    const point = indexToPoint(index, order);
+    curve[offset(point.x, point.y, n)] = data[index];
+  }
+  return curve;
+}
+
+function offset(column, row, width) {
+  return row * width + column;
+}
+
+export function indexToPoint(index, order) {
+  const n = 2 ** order;
   const point = { x: 0, y: 0 };
   let rx, ry, s;
   for (let s = 1, t = index; s < n; s *= 2) {
@@ -14,7 +47,8 @@ export function indexToPoint(index, n) {
   return point;
 }
 
-export function pointToIndex(point, n) {
+export function pointToIndex(point, order) {
+  const n = 2 ** order;
   let rx,
     ry,
     index = 0;
