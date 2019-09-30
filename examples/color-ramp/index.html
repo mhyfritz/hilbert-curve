@@ -272,13 +272,13 @@
 
       const canvas = document.querySelector("#canvas");
       const context = canvas.getContext("2d");
-      const n = Math.sqrt(ramp.length);
-      const dimCellPx = canvas.width / n;
+      const o = Math.log2(Math.sqrt(ramp.length));
+      const dimCellPx = canvas.width / Math.pow(2, o);
       const prev = { x: undefined, y: undefined };
 
       for (index = 0; index < ramp.length; index += 1) {
         const color = ramp[index];
-        const point = hilbertCurve.indexToPoint(index, n);
+        const point = hilbertCurve.indexToPoint(index, o);
         context.fillStyle = color;
         context.fillRect(
           point.x * dimCellPx,
