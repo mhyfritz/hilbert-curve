@@ -30,10 +30,10 @@ Browser:
 
 ![Hilbert Curve Numbering](./hilbert-curve-numbering.png)
 
-### `hilbertCurve.indexToPoint(i, o)`
+### `hilbertCurve.indexToPoint(index, order)`
 
-Given an index `i`, return the point on the Hilbert curve of order `o`
-(the length of the entire curve being `2^o * 2^o`), e.g.
+Given an index `index`, return the point on the Hilbert curve of order `order`
+(the length of the entire curve being `2^order * 2^order`), e.g.
 
 ```javascript
 // order is 3, i.e. curve is defined on a 2^3 * 2^3 = 8 * 8 square
@@ -41,18 +41,18 @@ hilbertCurve.indexToPoint(17, 3);
 // { x: 1, y: 4 }
 ```
 
-### `hilbertCurve.pointToIndex({x, y}, o)`
+### `hilbertCurve.pointToIndex({x, y}, order)`
 
-Inverse: given a point `{x,y}` on the Hilbert curve of order `o`, return the index, e.g.
+Inverse: given a point `{x,y}` on the Hilbert curve of order `order`, return the index, e.g.
 
 ```javascript
 hilbertCurve.pointToIndex({ x: 5, y: 2 }, 3);
 // 55
 ```
 
-### `hilbertCurve.construct(data, o)`
+### `hilbertCurve.construct(data, order)`
 
-Construct the Hilbert curve of order `o` from `data`, e.g.
+Construct the Hilbert curve of order `order` from `data`, e.g.
 
 ```javascript
 // data is `[1, 2, 3, ..., 14, 15, 16]`
