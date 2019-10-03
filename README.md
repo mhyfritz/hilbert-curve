@@ -59,8 +59,8 @@ array using
 
 If no order is given, a curve of order
 `Math.ceil(Math.log2(Math.sqrt(data.length)))` is constructed.
-Note that if `data.length` is not a power of 2, the curve will contain empty/undefined
-items.
+Note, that if `Math.sqrt(data.length)` is not a power of 2,
+the curve will contain empty/undefined items.
 
 If an `order` is given that is smaller than `Math.ceil(Math.log2(Math.sqrt(data.length)))`,
 the values of `data` will first be binned using
