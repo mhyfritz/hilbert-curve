@@ -59,6 +59,11 @@ Construct the Hilbert curve of order `order` from `data`, e.g.
 const data = Array.from({ length: 4 * 4 }, (_, i) => i + 1);
 hilbertCurve.construct(data, 2);
 // [1, 2, 15, 16, 4, 3, 14, 13, 5, 8, 9, 12, 6, 7, 10, 11]
+// to be interpreted as 4x4 square:
+//  1  2 15 16
+//  4  3 14 13
+//  5  8  9 12
+//  6  7 10 11
 ```
 
 [Try `hilbert-curve` in your browser.](https://npm.runkit.com/hilbert-curve)
