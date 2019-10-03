@@ -64,10 +64,10 @@ items.
 
 If an `order` is given that is smaller than `Math.ceil(Math.log2(Math.sqrt(data.length)))`,
 the values of `data` will first be binned using
-[`@mhyfritz/bin-data`](https://github.com/mhyfritz/bin-data), i.e., by
-default the maximum value is picked for every chunk, however, a function
-`pickRepresentative` can be passed as a third argument to `construct`.
-For more details on the binning, confer the docs of
+[`@mhyfritz/bin-data`](https://github.com/mhyfritz/bin-data). By
+default, numeric data is assumed and the maximum value is picked for every chunk, however,
+a function `pickRepresentative` can be passed as a third argument to `construct`.
+For more details on this, confer the docs of
 [`@mhyfritz/bin-data`](https://github.com/mhyfritz/bin-data).
 
 Example:
