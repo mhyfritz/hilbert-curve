@@ -1,3 +1,5 @@
+![GitHub Actions status | mhyfritz/hilbert-curve](https://github.com/mhyfritz/hilbert-curve/workflows/Unit%20tests/badge.svg)
+
 # Hilbert curve mapping
 
 ## Installation
