@@ -55,7 +55,7 @@
               :y2="heightInner"
             />
             <text
-              v-for="i in n+1"
+              v-for="i in n"
               :key="`t:y:${i}`"
               :x="-10"
               :y="y(i-0.5)"
@@ -64,7 +64,7 @@
               {{ i - 1 }}
             </text>
             <text
-              v-for="i in n+1"
+              v-for="i in n"
               :key="`t:x:${i}`"
               :x="x(i-0.5)"
               :y="-10"
