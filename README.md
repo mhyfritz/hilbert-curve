@@ -50,9 +50,27 @@ hilbertCurve.pointToIndex({ x: 5, y: 2 }, 3);
 // 55
 ```
 
-### `hilbertCurve.construct(data, order)`
+### `hilbertCurve.construct(data, [order], [pickRepresentative])`
 
-Construct the Hilbert curve of order `order` from `data`, e.g.
+Construct the Hilbert curve of `data`, and optionally specify its `order`.
+`data` has to be an array or an object that can be converted to an
+array using
+[`Array.from()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+
+If no order is given, a curve of order
+`Math.ceil(Math.log2(Math.sqrt(data.length)))` is constructed.
+Note that if `data.length` is not a power of 2, the curve will contain empty/undefined
+items.
+
+If an `order` is given that is smaller than `Math.ceil(Math.log2(Math.sqrt(data.length)))`,
+the values of `data` will first be binned using
+[`@mhyfritz/bin-data`](https://github.com/mhyfritz/bin-data), i.e., by
+default the maximum value is picked for every chunk, however, a function
+`pickRepresentative` can be passed as a third argument to `construct`.
+For more details on the binning, confer the docs of
+[`@mhyfritz/bin-data`](https://github.com/mhyfritz/bin-data).
+
+Example:
 
 ```javascript
 // data is `[1, 2, 3, ..., 14, 15, 16]`
