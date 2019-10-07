@@ -1,4 +1,4 @@
-![GitHub Actions status | mhyfritz/hilbert-curve](https://github.com/mhyfritz/hilbert-curve/workflows/Unit%20tests/badge.svg)
+[![GitHub Actions status | mhyfritz/hilbert-curve](https://github.com/mhyfritz/hilbert-curve/workflows/Unit%20tests/badge.svg)](https://github.com/mhyfritz/hilbert-curve/actions?workflow=Unit+tests)
 
 # Hilbert curve mapping
 
