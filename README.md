@@ -10,7 +10,7 @@ npm install hilbert-curve
 
 ## Usage
 
-Node:
+Node / module bundlers
 
 ```javascript
 const hilbertCurve = require("hilbert-curve");
